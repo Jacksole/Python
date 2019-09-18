@@ -28,6 +28,7 @@ def knapsack(W, wt, val, n):
 
     return dp[n][w]
 
+
 if __name__ == '__main__':
     '''
     Adding test case for knapsack
@@ -39,4 +40,3 @@ if __name__ == '__main__':
     F = [[0]*(w + 1)] + [[0] + [-1 for i in range(w + 1)] for j in range(n + 1)]
     print(knapsack(w,wt,val,n))
     print(MF_knapsack(n,wt,val,w))  # switched the n and w 
-    
