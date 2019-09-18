@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 grid = [[0, 1, 0, 0, 0, 0],
         [0, 1, 0, 0, 0, 0],  # 0 are free path whereas 1's are obstacles
         [0, 1, 0, 0, 0, 0],
@@ -14,8 +12,12 @@ heuristic = [[9, 8, 7, 6, 5, 4],
              [5, 4, 3, 2, 1, 0]]'''
 
 init = [0, 0]
+<<<<<<< HEAD
 # all coordinates are given in format [y,x]
 goal = [len(grid) - 1, len(grid[0]) - 1]
+=======
+goal = [len(grid)-1, len(grid[0])-1] #all coordinates are given in format [y,x]
+>>>>>>> upstream/master
 cost = 1
 
 # the cost map which pushes the path closer to the goal
@@ -65,6 +67,10 @@ def search(grid, init, goal, cost, heuristic):
             g = next[1]
             f = next[0]
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
             if x == goal[0] and y == goal[1]:
                 found = True
             else:
@@ -100,6 +106,13 @@ def search(grid, init, goal, cost, heuristic):
         print(action[i])
 
     return path
+<<<<<<< HEAD
+=======
+
+a = search(grid,init,goal,cost,heuristic)
+for i in range(len(a)):
+	print(a[i])
+>>>>>>> upstream/master
 
 
 a = search(grid, init, goal, cost, heuristic)
