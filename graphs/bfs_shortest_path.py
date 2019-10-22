@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-graph = {'A': ['B', 'C', 'E'],
-         'B': ['A', 'D', 'E'],
-         'C': ['A', 'F', 'G'],
-         'D': ['B'],
-         'E': ['A', 'B', 'D'],
-         'F': ['C'],
-         'G': ['C']}
-=======
 graph = {
     "A": ["B", "C", "E"],
     "B": ["A", "D", "E"],
@@ -16,8 +7,6 @@ graph = {
     "F": ["C"],
     "G": ["C"],
 }
-
->>>>>>> upstream/master
 
 
 def bfs_shortest_path(graph, start, goal):
@@ -55,8 +44,4 @@ def bfs_shortest_path(graph, start, goal):
     return "So sorry, but a connecting path doesn't exist :("
 
 
-<<<<<<< HEAD
-bfs_shortest_path(graph, 'G', 'D')  # returns ['G', 'C', 'A', 'B', 'D']
-=======
 bfs_shortest_path(graph, "G", "D")  # returns ['G', 'C', 'A', 'B', 'D']
->>>>>>> upstream/master

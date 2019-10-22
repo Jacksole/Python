@@ -1,7 +1,6 @@
 """
 Given weights and values of n items, put these items in a knapsack of
  capacity W to get the maximum total value in the knapsack.
-
 Note that only the integer weights 0-1 knapsack problem is solvable
  using dynamic programming.
 """
@@ -43,29 +42,25 @@ def knapsack_with_example_solution(W: int, wt: list, val: list):
     """
     Solves the integer weights knapsack problem returns one of
     the several possible optimal subsets.
-
     Parameters
     ---------
-
     W: int, the total maximum weight for the given knapsack problem.
     wt: list, the vector of weights for all items where wt[i] is the weight
     of the ith item.
     val: list, the vector of values for all items where val[i] is the value
     of te ith item
-
     Returns
     -------
     optimal_val: float, the optimal value for the given knapsack problem
     example_optional_set: set, the indices of one of the optimal subsets
     which gave rise to the optimal value.
-
     Examples
     -------
-    knapsack_with_example_solution(10, [1, 3, 5, 2], [10, 20, 100, 22])
+    >>> knapsack_with_example_solution(10, [1, 3, 5, 2], [10, 20, 100, 22])
     (142, {2, 3, 4})
-     knapsack_with_example_solution(6, [4, 3, 2, 3], [3, 2, 4, 4])
+    >>> knapsack_with_example_solution(6, [4, 3, 2, 3], [3, 2, 4, 4])
     (8, {3, 4})
-    knapsack_with_example_solution(6, [4, 3, 2, 3], [3, 2, 4])
+    >>> knapsack_with_example_solution(6, [4, 3, 2, 3], [3, 2, 4])
     Traceback (most recent call last):
         ...
     ValueError: The number of weights must be the same as the number of values.
@@ -101,21 +96,16 @@ def _construct_solution(dp: list, wt: list, i: int, j: int, optimal_set: set):
     """
     Recursively reconstructs one of the optimal subsets given
     a filled DP table and the vector of weights
-
     Parameters
     ---------
-
     dp: list of list, the table of a solved integer weight dynamic programming problem
-
     wt: list or tuple, the vector of weights of the items
     i: int, the index of the  item under consideration
     j: int, the current possible maximum weight
     optimal_set: set, the optimal subset so far. This gets modified by the function.
-
     Returns
     -------
     None
-
     """
     # for the current item i at a maximum weight j to be part of an optimal subset,
     # the optimal value at (i, j) must be greater than the optimal value at (i-1, j).
@@ -128,14 +118,8 @@ def _construct_solution(dp: list, wt: list, i: int, j: int, optimal_set: set):
             _construct_solution(dp, wt, i - 1, j - wt[i - 1], optimal_set)
 
 
-<<<<<<< HEAD
-
-if __name__ == '__main__':
-    '''
-=======
 if __name__ == "__main__":
     """
->>>>>>> upstream/master
     Adding test case for knapsack
     """
     val = [3, 2, 4, 4]
