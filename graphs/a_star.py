@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 grid = [[0, 1, 0, 0, 0, 0],
         [0, 1, 0, 0, 0, 0],  # 0 are free path whereas 1's are obstacles
         [0, 1, 0, 0, 0, 0],
@@ -5,18 +6,33 @@ grid = [[0, 1, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0]]
 
 '''
+=======
+grid = [
+    [0, 1, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],  # 0 are free path whereas 1's are obstacles
+    [0, 1, 0, 0, 0, 0],
+    [0, 1, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1, 0],
+]
+
+"""
+>>>>>>> upstream/master
 heuristic = [[9, 8, 7, 6, 5, 4],
              [8, 7, 6, 5, 4, 3],
              [7, 6, 5, 4, 3, 2],
              [6, 5, 4, 3, 2, 1],
-             [5, 4, 3, 2, 1, 0]]'''
+             [5, 4, 3, 2, 1, 0]]"""
 
 init = [0, 0]
+<<<<<<< HEAD
 <<<<<<< HEAD
 # all coordinates are given in format [y,x]
 goal = [len(grid) - 1, len(grid[0]) - 1]
 =======
 goal = [len(grid)-1, len(grid[0])-1] #all coordinates are given in format [y,x]
+>>>>>>> upstream/master
+=======
+goal = [len(grid) - 1, len(grid[0]) - 1]  # all coordinates are given in format [y,x]
 >>>>>>> upstream/master
 cost = 1
 
@@ -30,20 +46,34 @@ for i in range(len(grid)):
 
 
 # the actions we can take
+<<<<<<< HEAD
 delta = [[-1, 0],  # go up
          [0, -1],  # go left
          [1, 0],  # go down
          [0, 1]]  # go right
+=======
+delta = [[-1, 0], [0, -1], [1, 0], [0, 1]]  # go up  # go left  # go down  # go right
+>>>>>>> upstream/master
 
 
 # function to search the path
 def search(grid, init, goal, cost, heuristic):
 
+<<<<<<< HEAD
     closed = [[0 for col in range(len(grid[0]))]
               for row in range(len(grid))]  # the referrence grid
     closed[init[0]][init[1]] = 1
     action = [[0 for col in range(len(grid[0]))]
               for row in range(len(grid))]  # the action grid
+=======
+    closed = [
+        [0 for col in range(len(grid[0]))] for row in range(len(grid))
+    ]  # the referrence grid
+    closed[init[0]][init[1]] = 1
+    action = [
+        [0 for col in range(len(grid[0]))] for row in range(len(grid))
+    ]  # the action grid
+>>>>>>> upstream/master
 
     x = init[0]
     y = init[1]
@@ -68,6 +98,7 @@ def search(grid, init, goal, cost, heuristic):
             f = next[0]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> upstream/master
@@ -80,6 +111,15 @@ def search(grid, init, goal, cost, heuristic):
                     y2 = y + delta[i][1]
                     if x2 >= 0 and x2 < len(
                             grid) and y2 >= 0 and y2 < len(grid[0]):
+=======
+            if x == goal[0] and y == goal[1]:
+                found = True
+            else:
+                for i in range(len(delta)):  # to try out different valid actions
+                    x2 = x + delta[i][0]
+                    y2 = y + delta[i][1]
+                    if x2 >= 0 and x2 < len(grid) and y2 >= 0 and y2 < len(grid[0]):
+>>>>>>> upstream/master
                         if closed[x2][y2] == 0 and grid[x2][y2] == 0:
                             g2 = g + cost
                             f2 = g2 + heuristic[x2][y2]
@@ -109,6 +149,7 @@ def search(grid, init, goal, cost, heuristic):
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 a = search(grid,init,goal,cost,heuristic)
 for i in range(len(a)):
 	print(a[i])
@@ -118,5 +159,9 @@ for i in range(len(a)):
 a = search(grid, init, goal, cost, heuristic)
 
 
+=======
+
+a = search(grid, init, goal, cost, heuristic)
+>>>>>>> upstream/master
 for i in range(len(a)):
     print(a[i])
